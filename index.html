@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+LUIS FERNANDO AYALA PEREZ
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastronomía MX - Sabores de México</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Enlace de salto para accesibilidad por teclado -->
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header>
+        <div class="logo-box">
+            <span class="logo-icon" aria-hidden="true">🌶️</span>
+            <div>
+                <strong>Sabor a México</strong><br>
+                <span>Gastronomía Tradicional</span>
+            </div>
+        </div>
+        <!-- Se implementa ARIA Tabs para accesibilidad -->
+        <nav aria-label="Navegación de secciones" role="tablist" id="menu-principal">
+            <button role="tab" aria-selected="true" aria-controls="inicio" id="tab-inicio"
+                class="activo nav-btn">Inicio</button>
+            <button role="tab" aria-selected="false" aria-controls="platillos" id="tab-platillos"
+                class="nav-btn">Platillos</button>
+            <button role="tab" aria-selected="false" aria-controls="ingredientes" id="tab-ingredientes"
+                class="nav-btn">Ingredientes</button>
+            <button role="tab" aria-selected="false" aria-controls="regiones" id="tab-regiones"
+                class="nav-btn">Regiones</button>
+            <button role="tab" aria-selected="false" aria-controls="contacto" id="tab-contacto"
+                class="nav-btn">Contacto</button>
+        </nav>
+    </header>
+
+    <main id="contenido-principal">
+        <!-- ========================================== -->
+        <!-- VISTA 1: INICIO -->
+        <!-- ========================================== -->
+        <section id="inicio" role="tabpanel" aria-labelledby="tab-inicio" tabindex="0" class="vista-activa">
+            <div class="banner-hero"
+                style="background-image: url('https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?auto=format&fit=crop&w=1200&q=80');">
+                <div class="banner-content">
+                    <h1>LA RIQUEZA DE NUESTRA TIERRA</h1>
+                    <p>Un viaje por los colores, aromas y sabores de la auténtica comida mexicana.</p>
+                </div>
+            </div>
+
+            <div class="introduccion-box">
+                <h2 class="titulo-seccion">Nuestra Herencia Culinaria</h2>
+                <div class="separador" aria-hidden="true"></div>
+                <p class="texto-principal">
+                    La gastronomía mexicana es un mosaico de sabores que cuenta la historia de todo un país. Reconocida
+                    como Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO, nuestra cocina es la fusión
+                    perfecta entre las tradiciones prehispánicas y las influencias del viejo mundo. Cada platillo es una
+                    celebración de ingredientes endémicos como el maíz, el chile y el frijol, transformados con pasión y
+                    amor en cada hogar y región de México.
+                </p>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VISTA 2: PLATILLOS TÍPICOS -->
+        <!-- ========================================== -->
+        <section id="platillos" role="tabpanel" aria-labelledby="tab-platillos" tabindex="0" class="vista-oculta"
+            hidden>
+            <div class="encabezado-simple">
+                <h2 class="titulo-seccion">Platillos Tradicionales</h2>
+                <div class="separador" aria-hidden="true"></div>
+            </div>
+
+            <div class="layout-dos-columnas">
+                <!-- Barra lateral: Filtros funcionales semánticamente correctos -->
+                <aside class="filtros" aria-label="Filtros de platillos">
+                    <h3>Filtros</h3>
+
+                    <fieldset class="grupo-filtro">
+                        <legend class="leyenda-filtro">📍 Por Región:</legend>
+                        <label><input type="checkbox" checked> Todas</label>
+                        <label><input type="checkbox"> Norte</label>
+                        <label><input type="checkbox"> Centro</label>
+                        <label><input type="checkbox"> Sur</label>
+                        <label><input type="checkbox"> Costas</label>
+                    </fieldset>
+
+                    <fieldset class="grupo-filtro">
+                        <legend class="leyenda-filtro">🍽️ Por Tipo:</legend>
+                        <label><input type="checkbox"> Antojitos</label>
+                        <label><input type="checkbox"> Platos Fuertes</label>
+                        <label><input type="checkbox"> Sopas y Caldos</label>
+                        <label><input type="checkbox"> Postres</label>
+                    </fieldset>
+                </aside>
+
+                <div class="grid-tarjetas">
+                    <!-- Tarjeta 1 -->
+                    <article class="tarjeta">
+                        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=600&q=80"
+                            alt="Plato de Tacos al Pastor servidos con limón">
+                        <div class="tarjeta-info">
+                            <h3>Tacos al Pastor</h3>
+                            <span class="badge">Región: Centro</span>
+                            <p>Deliciosa carne de cerdo adobada, asada en trompo, servida en tortilla de maíz con piña,
+                                cilantro y cebolla.</p>
+                            <!-- aria-label da contexto a lectores de pantalla -->
+                            <button class="btn-leer-mas" aria-label="Ver Receta de Tacos al Pastor">Ver Receta</button>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 2 -->
+                    <article class="tarjeta">
+                        <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&w=600&q=80"
+                            alt="Pieza de pollo bañada en Mole Poblano oscuro">
+                        <div class="tarjeta-info">
+                            <h3>Mole Poblano</h3>
+                            <span class="badge">Región: Sur (Puebla)</span>
+                            <p>Una salsa compleja y rica hecha con una mezcla de chiles, especias, nueces y chocolate,
+                                servida sobre pollo.</p>
+                            <button class="btn-leer-mas" aria-label="Ver Receta de Mole Poblano">Ver Receta</button>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 3 -->
+                    <article class="tarjeta">
+                        <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?auto=format&fit=crop&w=600&q=80"
+                            alt="Enchiladas Verdes servidas en plato con crema y queso">
+                        <div class="tarjeta-info">
+                            <h3>Enchiladas Verdes</h3>
+                            <span class="badge">Región: Todo el país</span>
+                            <p>Tortillas de maíz rellenas de pollo, bañadas en una salsa de tomatillo verde, cubiertas
+                                con crema, queso y cebolla.</p>
+                            <button class="btn-leer-mas" aria-label="Ver Receta de Enchiladas Verdes">Ver
+                                Receta</button>
+                        </div>
+                    </article>
+
+                    <!-- Tarjeta 4 -->
+                    <article class="tarjeta">
+                        <img src="https://images.unsplash.com/photo-1588167171008-01e4a2829377?auto=format&fit=crop&w=600&q=80"
+                            alt="Tazón de Guacamole fresco con totopos">
+                        <div class="tarjeta-info">
+                            <h3>Guacamole Tradicional</h3>
+                            <span class="badge">Entrada / Guarnición</span>
+                            <p>Aguacate machacado mezclado con tomate, cebolla, chile serrano, cilantro fresco y jugo de
+                                limón.</p>
+                            <button class="btn-leer-mas" aria-label="Ver Receta de Guacamole Tradicional">Ver
+                                Receta</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- VISTA 3: INGREDIENTES -->
+        <!-- ========================================== -->
+        <section id="ingredientes" role="tabpanel" aria-labelledby="tab-ingredientes" tabindex="0" class="vista-oculta"
+            hidden>
+            <div class="banner-hero corto"
+                style="background-image: url('https://images.unsplash.com/photo-1596695287790-2ee2f77eec82?auto=format&fit=crop&w=1200&q=80');">
+                <div class="banner-content">
+                    <h1>LA BASE DEL SABOR</h1>
+                    <p>Los ingredientes fundamentales de nuestra cocina</p>
+                </div>
+            </div>
+
+            <div class="introduccion-box">
+                <p class="texto-principal" style="text-align: center;">
+                    La sagrada trinidad de la cocina mexicana se compone de Maíz, Frijol y Chile. Alrededor de estos
+                    tres pilares giran siglos de evolución culinaria, aportando color, textura y un sabor inigualable
+                    que define nuestra identidad en el mundo.
+                </p>
+            </div>
+
+            <div class="grid-ingredientes">
+                <article class="tarjeta-ingrediente">
+                    <div class="ingrediente-header">
+                        <!-- h3 cambiado a h2 por jerarquía lógica después de un h1 -->
+                        <h2>El Maíz 🌽</h2>
+                        <p class="subtitulo">El origen de la vida</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=600&q=80"
+                        alt="Mazorcas de maíz mexicano de distintos colores">
+                    <div class="ingrediente-body">
+                        <p>Base indiscutible de la alimentación mexicana, utilizado en tortillas, tamales, pozole,
+                            atoles y miles de preparaciones más mediante el milenario proceso de nixtamalización.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta-ingrediente">
+                    <div class="ingrediente-header">
+                        <h2>El Chile 🌶️</h2>
+                        <p class="subtitulo">La esencia del carácter</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76b?auto=format&fit=crop&w=600&q=80"
+                        alt="Gran variedad de chiles secos mexicanos">
+                    <div class="ingrediente-body">
+                        <p>Más que aportar picor, los chiles (frescos o secos como el ancho, pasilla o guajillo) aportan
+                            profundidad, dulzor, notas ahumadas y color a salsas, moles y adobos.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Pestañas restantes -->
+        <section id="regiones" role="tabpanel" aria-labelledby="tab-regiones" tabindex="0" class="vista-oculta" hidden>
+            <div class="introduccion-box">
+                <h2 class="titulo-seccion">Regiones Gastronómicas</h2>
+                <p class="texto-principal">Sección en construcción. Aquí verás un mapa interactivo de México con los
+                    sabores de cada estado.</p>
+            </div>
+        </section>
+
+        <section id="contacto" role="tabpanel" aria-labelledby="tab-contacto" tabindex="0" class="vista-oculta" hidden>
+            <div class="introduccion-box">
+                <h2 class="titulo-seccion">Contáctanos</h2>
+                <p class="texto-principal">Sección en construcción. Aquí habrá un formulario para compartir tus recetas
+                    familiares con nosotros.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabs = document.querySelectorAll('.nav-btn');
+            const paneles = document.querySelectorAll('[role="tabpanel"]');
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function (e) {
+                    // 1. Quitar activo y aria-selected a todos
+                    tabs.forEach(t => {
+                        t.classList.remove("activo");
+                        t.setAttribute("aria-selected", "false");
+                    });
+
+                    // 2. Ocultar todos los paneles
+                    paneles.forEach(panel => {
+                        panel.classList.remove("vista-activa");
+                        panel.classList.add("vista-oculta");
+                        panel.setAttribute("hidden", "true");
+                    });
+
+                    // 3. Activar el tab presionado
+                    this.classList.add("activo");
+                    this.setAttribute("aria-selected", "true");
+
+                    // 4. Mostrar el panel correspondiente
+                    const idDestino = this.getAttribute("aria-controls");
+                    const seccionDestino = document.getElementById(idDestino);
+                    seccionDestino.classList.remove("vista-oculta");
+                    seccionDestino.classList.add("vista-activa");
+                    seccionDestino.removeAttribute("hidden");
+
+                    // IMPORTANTE WCAG: Mover el foco al nuevo contenedor para lectores de pantalla
+                    seccionDestino.focus();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
