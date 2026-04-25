@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-LUIS FERNANDO AYALA PEREZ
 
 <head>
     <meta charset="UTF-8">
@@ -22,18 +21,43 @@ LUIS FERNANDO AYALA PEREZ
                 <span>Gastronomía Tradicional</span>
             </div>
         </div>
-        <!-- Se implementa ARIA Tabs para accesibilidad -->
-        <nav aria-label="Navegación de secciones" role="tablist" id="menu-principal">
-            <button role="tab" aria-selected="true" aria-controls="inicio" id="tab-inicio"
-                class="activo nav-btn">Inicio</button>
-            <button role="tab" aria-selected="false" aria-controls="platillos" id="tab-platillos"
-                class="nav-btn">Platillos</button>
-            <button role="tab" aria-selected="false" aria-controls="ingredientes" id="tab-ingredientes"
-                class="nav-btn">Ingredientes</button>
-            <button role="tab" aria-selected="false" aria-controls="regiones" id="tab-regiones"
-                class="nav-btn">Regiones</button>
-            <button role="tab" aria-selected="false" aria-controls="contacto" id="tab-contacto"
-                class="nav-btn">Contacto</button>
+        
+        <nav aria-label="Navegación de secciones">
+            <ul id="menu-principal">
+                <li class="nav-item">
+                    <button role="tab" aria-selected="true" aria-controls="inicio" id="tab-inicio" class="activo nav-btn">Inicio</button>
+                </li>
+
+                <!-- Elemento con Menú Desplegable -->
+                <li class="nav-item nav-item-has-dropdown">
+                    <button role="tab" aria-selected="false" aria-controls="platillos" id="tab-platillos" class="nav-btn" aria-haspopup="true" aria-expanded="false">Platillos</button>
+                    <ul class="submenu" aria-labelledby="tab-platillos">
+                        <li><a href="#" class="enlace-filtro" data-tipo="antojito">Antojitos</a></li>
+                        <li><a href="#" class="enlace-filtro" data-tipo="plato-fuerte">Platos Fuertes</a></li>
+                        <li><a href="#" class="enlace-filtro" data-tipo="sopas-caldos">Sopas y Caldos</a></li>
+                        <li><a href="#" class="enlace-filtro" data-tipo="postre">Postres</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <button role="tab" aria-selected="false" aria-controls="ingredientes" id="tab-ingredientes" class="nav-btn">Ingredientes</button>
+                </li>
+
+                <!-- Elemento con Menú Desplegable -->
+                <li class="nav-item nav-item-has-dropdown">
+                    <button role="tab" aria-selected="false" aria-controls="regiones" id="tab-regiones" class="nav-btn" aria-haspopup="true" aria-expanded="false">Regiones</button>
+                    <ul class="submenu" aria-labelledby="tab-regiones">
+                        <li><a href="#regiones">Norte</a></li>
+                        <li><a href="#regiones">Centro</a></li>
+                        <li><a href="#regiones">Sur</a></li>
+                        <li><a href="#regiones">Costas</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <button role="tab" aria-selected="false" aria-controls="contacto" id="tab-contacto" class="nav-btn">Contacto</button>
+                </li>
+            </ul>
         </nav>
     </header>
 
@@ -42,11 +66,32 @@ LUIS FERNANDO AYALA PEREZ
         <!-- VISTA 1: INICIO -->
         <!-- ========================================== -->
         <section id="inicio" role="tabpanel" aria-labelledby="tab-inicio" tabindex="0" class="vista-activa">
-            <div class="banner-hero"
-                style="background-image: url('https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?auto=format&fit=crop&w=1200&q=80');">
-                <div class="banner-content">
-                    <h1>LA RIQUEZA DE NUESTRA TIERRA</h1>
-                    <p>Un viaje por los colores, aromas y sabores de la auténtica comida mexicana.</p>
+            <!-- SLIDER DE IMÁGENES (CARRUSEL) -->
+            <div class="slider-container" id="inicio-slider" aria-roledescription="carousel" aria-label="Imágenes destacadas de gastronomía">
+                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?auto=format&fit=crop&w=1200&q=80');" role="group" aria-roledescription="slide" aria-label="1 de 3">
+                    <div class="banner-content">
+                        <h1>LA RIQUEZA DE NUESTRA TIERRA</h1>
+                        <p>Un viaje por los colores, aromas y sabores de la auténtica comida mexicana.</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80');" role="group" aria-roledescription="slide" aria-label="2 de 3">
+                    <div class="banner-content">
+                        <h1>TRADICIÓN MILENARIA</h1>
+                        <p>Recetas pasadas de generación en generación en cada hogar mexicano.</p>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=1200&q=80');" role="group" aria-roledescription="slide" aria-label="3 de 3">
+                    <div class="banner-content">
+                        <h1>INGREDIENTES FRESCOS</h1>
+                        <p>Del campo a tu mesa, descubriendo el verdadero sabor de nuestra tierra.</p>
+                    </div>
+                </div>
+                <button class="slider-btn prev-btn" aria-label="Ver imagen anterior">&#10094;</button>
+                <button class="slider-btn next-btn" aria-label="Ver imagen siguiente">&#10095;</button>
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0" aria-label="Ir a la imagen 1"></span>
+                    <span class="dot" data-slide="1" aria-label="Ir a la imagen 2"></span>
+                    <span class="dot" data-slide="2" aria-label="Ir a la imagen 3"></span>
                 </div>
             </div>
 
@@ -64,93 +109,173 @@ LUIS FERNANDO AYALA PEREZ
         </section>
 
         <!-- ========================================== -->
-        <!-- VISTA 2: PLATILLOS TÍPICOS -->
+        <!-- VISTA 2: PLATILLOS TÍPICOS Y FILTROS -->
         <!-- ========================================== -->
-        <section id="platillos" role="tabpanel" aria-labelledby="tab-platillos" tabindex="0" class="vista-oculta"
-            hidden>
+        <section id="platillos" role="tabpanel" aria-labelledby="tab-platillos" tabindex="0" class="vista-oculta" hidden>
             <div class="encabezado-simple">
                 <h2 class="titulo-seccion">Platillos Tradicionales</h2>
                 <div class="separador" aria-hidden="true"></div>
             </div>
 
             <div class="layout-dos-columnas">
-                <!-- Barra lateral: Filtros funcionales semánticamente correctos -->
                 <aside class="filtros" aria-label="Filtros de platillos">
                     <h3>Filtros</h3>
-
                     <fieldset class="grupo-filtro">
                         <legend class="leyenda-filtro">📍 Por Región:</legend>
-                        <label><input type="checkbox" checked> Todas</label>
-                        <label><input type="checkbox"> Norte</label>
-                        <label><input type="checkbox"> Centro</label>
-                        <label><input type="checkbox"> Sur</label>
-                        <label><input type="checkbox"> Costas</label>
+                        <label><input type="checkbox" class="filtro-region" value="todas" checked> Todas</label>
+                        <label><input type="checkbox" class="filtro-region" value="norte"> Norte</label>
+                        <label><input type="checkbox" class="filtro-region" value="centro"> Centro</label>
+                        <label><input type="checkbox" class="filtro-region" value="sur"> Sur</label>
+                        <label><input type="checkbox" class="filtro-region" value="costas"> Costas</label>
                     </fieldset>
-
                     <fieldset class="grupo-filtro">
                         <legend class="leyenda-filtro">🍽️ Por Tipo:</legend>
-                        <label><input type="checkbox"> Antojitos</label>
-                        <label><input type="checkbox"> Platos Fuertes</label>
-                        <label><input type="checkbox"> Sopas y Caldos</label>
-                        <label><input type="checkbox"> Postres</label>
+                        <label><input type="checkbox" class="filtro-tipo" value="todos" checked> Todos</label>
+                        <label><input type="checkbox" class="filtro-tipo" value="antojito"> Antojitos</label>
+                        <label><input type="checkbox" class="filtro-tipo" value="plato-fuerte"> Platos Fuertes</label>
+                        <label><input type="checkbox" class="filtro-tipo" value="sopas-caldos"> Sopas y Caldos</label>
+                        <label><input type="checkbox" class="filtro-tipo" value="postre"> Postres</label>
                     </fieldset>
                 </aside>
 
-                <div class="grid-tarjetas">
-                    <!-- Tarjeta 1 -->
-                    <article class="tarjeta">
-                        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=600&q=80"
-                            alt="Plato de Tacos al Pastor servidos con limón">
-                        <div class="tarjeta-info">
-                            <h3>Tacos al Pastor</h3>
-                            <span class="badge">Región: Centro</span>
-                            <p>Deliciosa carne de cerdo adobada, asada en trompo, servida en tortilla de maíz con piña,
-                                cilantro y cebolla.</p>
-                            <!-- aria-label da contexto a lectores de pantalla -->
-                            <button class="btn-leer-mas" aria-label="Ver Receta de Tacos al Pastor">Ver Receta</button>
-                        </div>
-                    </article>
+                <div>
+                    <!-- Mensaje Dinámico del Filtro -->
+                    <div id="status-msg" role="status" aria-live="polite"></div>
 
-                    <!-- Tarjeta 2 -->
-                    <article class="tarjeta">
-                        <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&w=600&q=80"
-                            alt="Pieza de pollo bañada en Mole Poblano oscuro">
-                        <div class="tarjeta-info">
-                            <h3>Mole Poblano</h3>
-                            <span class="badge">Región: Sur (Puebla)</span>
-                            <p>Una salsa compleja y rica hecha con una mezcla de chiles, especias, nueces y chocolate,
-                                servida sobre pollo.</p>
-                            <button class="btn-leer-mas" aria-label="Ver Receta de Mole Poblano">Ver Receta</button>
-                        </div>
-                    </article>
+                    <div class="grid-tarjetas" id="contenedor-platillos">
+                        
+                        <!-- 1. Tacos al Pastor -->
+                        <article class="tarjeta" data-region="centro" data-tipo="plato-fuerte">
+                            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=600&q=80" alt="Tacos al Pastor">
+                            <div class="tarjeta-info">
+                                <h3>Tacos al Pastor</h3>
+                                <span class="badge">Región: Centro | Plato Fuerte</span>
+                                <p>Carne de cerdo adobada y asada en trompo, servida con piña, cilantro y cebolla.</p>
+                                <button class="btn-leer-mas" data-receta="tacos">Ver Receta</button>
+                            </div>
+                        </article>
 
-                    <!-- Tarjeta 3 -->
-                    <article class="tarjeta">
-                        <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?auto=format&fit=crop&w=600&q=80"
-                            alt="Enchiladas Verdes servidas en plato con crema y queso">
-                        <div class="tarjeta-info">
-                            <h3>Enchiladas Verdes</h3>
-                            <span class="badge">Región: Todo el país</span>
-                            <p>Tortillas de maíz rellenas de pollo, bañadas en una salsa de tomatillo verde, cubiertas
-                                con crema, queso y cebolla.</p>
-                            <button class="btn-leer-mas" aria-label="Ver Receta de Enchiladas Verdes">Ver
-                                Receta</button>
-                        </div>
-                    </article>
+                        <!-- 2. Mole Poblano -->
+                        <article class="tarjeta" data-region="sur" data-tipo="plato-fuerte">
+                            <img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?auto=format&fit=crop&w=600&q=80" alt="Mole Poblano">
+                            <div class="tarjeta-info">
+                                <h3>Mole Poblano</h3>
+                                <span class="badge">Región: Sur | Plato Fuerte</span>
+                                <p>Una salsa compleja y rica hecha con mezcla de chiles, especias y chocolate.</p>
+                                <button class="btn-leer-mas" data-receta="mole">Ver Receta</button>
+                            </div>
+                        </article>
 
-                    <!-- Tarjeta 4 -->
-                    <article class="tarjeta">
-                        <img src="https://images.unsplash.com/photo-1588167171008-01e4a2829377?auto=format&fit=crop&w=600&q=80"
-                            alt="Tazón de Guacamole fresco con totopos">
-                        <div class="tarjeta-info">
-                            <h3>Guacamole Tradicional</h3>
-                            <span class="badge">Entrada / Guarnición</span>
-                            <p>Aguacate machacado mezclado con tomate, cebolla, chile serrano, cilantro fresco y jugo de
-                                limón.</p>
-                            <button class="btn-leer-mas" aria-label="Ver Receta de Guacamole Tradicional">Ver
-                                Receta</button>
-                        </div>
-                    </article>
+                        <!-- 3. Enchiladas Verdes -->
+                        <article class="tarjeta" data-region="centro" data-tipo="plato-fuerte">
+                            <img src="https://images.pexels.com/photos/2087748/pexels-photo-2087748.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Enchiladas Verdes">
+                            <div class="tarjeta-info">
+                                <h3>Enchiladas Verdes</h3>
+                                <span class="badge">Región: Centro | Plato Fuerte</span>
+                                <p>Tortillas rellenas de pollo, bañadas en salsa verde con crema y queso.</p>
+                                <button class="btn-leer-mas" data-receta="enchiladas">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 4. Guacamole -->
+                        <article class="tarjeta" data-region="todas" data-tipo="antojito">
+                            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80" alt="Guacamole Tradicional">
+                            <div class="tarjeta-info">
+                                <h3>Guacamole Tradicional</h3>
+                                <span class="badge">Nacional | Antojito</span>
+                                <p>Aguacate machacado mezclado con tomate, cebolla, chile serrano y limón.</p>
+                                <button class="btn-leer-mas" data-receta="guacamole">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 5. Pozole Rojo (IMAGEN WIKIMEDIA - GARANTIZADA) -->
+                        <article class="tarjeta" data-region="centro" data-tipo="sopas-caldos">
+                            <img src="https://www.cocinavital.mx/wp-content/uploads/2024/05/pozole-rojo-1-634x420.jpg" alt="Pozole Rojo">
+                            <div class="tarjeta-info">
+                                <h3>Pozole Rojo</h3>
+                                <span class="badge">Región: Centro | Sopa y Caldo</span>
+                                <p>Caldo tradicional a base de granos de maíz cacahuazintle y carne de cerdo.</p>
+                                <button class="btn-leer-mas" data-receta="pozole">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 6. Aguachile (IMAGEN WIKIMEDIA - GARANTIZADA) -->
+                        <article class="tarjeta" data-region="costas" data-tipo="antojito">
+                            <img src="https://www.cocinavital.mx/wp-content/uploads/2025/02/aguachile-verde-de-camaron.jpg" alt="Aguachile de Camarón">
+                            <div class="tarjeta-info">
+                                <h3>Aguachile Verde</h3>
+                                <span class="badge">Región: Costas | Antojito</span>
+                                <p>Camarones crudos marinados en jugo de limón, chile serrano, pepino y cebolla morada.</p>
+                                <button class="btn-leer-mas" data-receta="aguachile">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 7. Cochinita Pibil (IMAGEN WIKIMEDIA - GARANTIZADA) -->
+                        <article class="tarjeta" data-region="sur" data-tipo="plato-fuerte">
+                            <img src="https://images.ctfassets.net/ttw7uwgviuml/3Gh5MRpMBgqyCbEAyuRjQs/a23a7b3919dc97c0511090668c8d522a/SKU_80193_2.jpg?fm=webp" alt="Tacos de Cochinita Pibil">
+                            <div class="tarjeta-info">
+                                <h3>Cochinita Pibil</h3>
+                                <span class="badge">Región: Sur | Plato Fuerte</span>
+                                <p>Cerdo adobado en achiote, envuelto en hoja de plátano y cocinado lentamente al horno.</p>
+                                <button class="btn-leer-mas" data-receta="cochinita">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 8. Churros con Chocolate -->
+                        <article class="tarjeta" data-region="todas" data-tipo="postre">
+                            <img src="https://images.unsplash.com/photo-1624371414361-e670edf4898d?auto=format&fit=crop&w=600&q=80" alt="Churros Mexicanos">
+                            <div class="tarjeta-info">
+                                <h3>Churros Mexicanos</h3>
+                                <span class="badge">Nacional | Postre</span>
+                                <p>Masa frita y crujiente, espolvoreada con azúcar y canela, ideales con chocolate caliente.</p>
+                                <button class="btn-leer-mas" data-receta="churros">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 9. Ceviche Acapulqueño (IMAGEN WIKIMEDIA - GARANTIZADA) -->
+                        <article class="tarjeta" data-region="costas" data-tipo="plato-fuerte">
+                            <img src="https://cdn7.kiwilimon.com/brightcove/11070/640x640/11070.jpg.webp" alt="Ceviche de Pescado">
+                            <div class="tarjeta-info">
+                                <h3>Ceviche de Pescado</h3>
+                                <span class="badge">Región: Costas | Plato Fuerte</span>
+                                <p>Pescado fresco curado en limón, mezclado con jitomate, cebolla, chile, cilantro y aceitunas.</p>
+                                <button class="btn-leer-mas" data-receta="ceviche">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 10. Machaca con Huevo -->
+                        <article class="tarjeta" data-region="norte" data-tipo="plato-fuerte">
+                            <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=600&q=80" alt="Desayuno Norteño">
+                            <div class="tarjeta-info">
+                                <h3>Machaca con Huevo</h3>
+                                <span class="badge">Región: Norte | Plato Fuerte</span>
+                                <p>Carne de res seca y deshebrada, frita con jitomate, cebolla, chile y huevos revueltos.</p>
+                                <button class="btn-leer-mas" data-receta="machaca">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 11. Sopa de Lima -->
+                        <article class="tarjeta" data-region="sur" data-tipo="sopas-caldos">
+                            <img src="https://www.seriouseats.com/thmb/9lylUmOSkIlUH1_hNa6zTmenGl4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2016__05__20160505-sopa-de-lima-22-a78c408efb60416d8b6e36b45e3977fa.jpg" alt="Sopa de Lima">
+                            <div class="tarjeta-info">
+                                <h3>Sopa de Lima</h3>
+                                <span class="badge">Región: Sur | Sopa y Caldo</span>
+                                <p>Caldito de pollo aromático con un toque cítrico de lima y tiras de tortilla frita.</p>
+                                <button class="btn-leer-mas" data-receta="sopalima">Ver Receta</button>
+                            </div>
+                        </article>
+
+                        <!-- 12. Flan Napolitano -->
+                        <article class="tarjeta" data-region="todas" data-tipo="postre">
+                            <img src="https://images.unsplash.com/photo-1559598467-f8b76c8155d0?auto=format&fit=crop&w=600&q=80" alt="Flan Napolitano">
+                            <div class="tarjeta-info">
+                                <h3>Flan Napolitano</h3>
+                                <span class="badge">Nacional | Postre</span>
+                                <p>Postre suave y cremoso de vainilla bañado en un dulce caramelo líquido.</p>
+                                <button class="btn-leer-mas" data-receta="flan">Ver Receta</button>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -158,110 +283,147 @@ LUIS FERNANDO AYALA PEREZ
         <!-- ========================================== -->
         <!-- VISTA 3: INGREDIENTES -->
         <!-- ========================================== -->
-        <section id="ingredientes" role="tabpanel" aria-labelledby="tab-ingredientes" tabindex="0" class="vista-oculta"
-            hidden>
-            <div class="banner-hero corto"
-                style="background-image: url('https://images.unsplash.com/photo-1596695287790-2ee2f77eec82?auto=format&fit=crop&w=1200&q=80');">
+        <section id="ingredientes" role="tabpanel" aria-labelledby="tab-ingredientes" tabindex="0" class="vista-oculta" hidden>
+            <div class="banner-hero corto" style="background-image: url('https://images.unsplash.com/photo-1596695287790-2ee2f77eec82?auto=format&fit=crop&w=1200&q=80');">
                 <div class="banner-content">
                     <h1>LA BASE DEL SABOR</h1>
                     <p>Los ingredientes fundamentales de nuestra cocina</p>
                 </div>
             </div>
-
             <div class="introduccion-box">
                 <p class="texto-principal" style="text-align: center;">
                     La sagrada trinidad de la cocina mexicana se compone de Maíz, Frijol y Chile. Alrededor de estos
-                    tres pilares giran siglos de evolución culinaria, aportando color, textura y un sabor inigualable
-                    que define nuestra identidad en el mundo.
+                    tres pilares giran siglos de evolución culinaria, aportando color, textura y un sabor inigualable.
                 </p>
             </div>
-
             <div class="grid-ingredientes">
                 <article class="tarjeta-ingrediente">
                     <div class="ingrediente-header">
-                        <!-- h3 cambiado a h2 por jerarquía lógica después de un h1 -->
                         <h2>El Maíz 🌽</h2>
                         <p class="subtitulo">El origen de la vida</p>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=600&q=80"
-                        alt="Mazorcas de maíz mexicano de distintos colores">
+                    <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=600&q=80" alt="Mazorcas de maíz mexicano de distintos colores">
                     <div class="ingrediente-body">
-                        <p>Base indiscutible de la alimentación mexicana, utilizado en tortillas, tamales, pozole,
-                            atoles y miles de preparaciones más mediante el milenario proceso de nixtamalización.</p>
+                        <p>Base indiscutible de la alimentación, utilizado en tortillas, tamales, pozole mediante la nixtamalización.</p>
                     </div>
                 </article>
-
                 <article class="tarjeta-ingrediente">
                     <div class="ingrediente-header">
                         <h2>El Chile 🌶️</h2>
                         <p class="subtitulo">La esencia del carácter</p>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76b?auto=format&fit=crop&w=600&q=80"
-                        alt="Gran variedad de chiles secos mexicanos">
+                    <img src="https://images.pexels.com/photos/1351238/pexels-photo-1351238.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gran variedad de chiles secos mexicanos apilados">
                     <div class="ingrediente-body">
-                        <p>Más que aportar picor, los chiles (frescos o secos como el ancho, pasilla o guajillo) aportan
-                            profundidad, dulzor, notas ahumadas y color a salsas, moles y adobos.</p>
+                        <p>Más que picor, aportan profundidad, dulzor, notas ahumadas y color a salsas, moles y adobos.</p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- Pestañas restantes -->
+        <!-- ========================================== -->
+        <!-- VISTA 4: REGIONES Y MAPA -->
+        <!-- ========================================== -->
         <section id="regiones" role="tabpanel" aria-labelledby="tab-regiones" tabindex="0" class="vista-oculta" hidden>
             <div class="introduccion-box">
-                <h2 class="titulo-seccion">Regiones Gastronómicas</h2>
-                <p class="texto-principal">Sección en construcción. Aquí verás un mapa interactivo de México con los
-                    sabores de cada estado.</p>
+                <h2 class="titulo-seccion">Mapa Culinario de México</h2>
+                <div class="separador" aria-hidden="true"></div>
+                <p class="texto-principal" style="text-align: center;">
+                    Nuestra geografía determina nuestros ingredientes. Explora las cuatro grandes regiones culinarias de México y la variedad geográfica que aporta nuestra tierra.
+                </p>
+            </div>
+
+            <div class="grid-regiones">
+                <article class="tarjeta-region">
+                    <div class="region-img" style="background-image: url('https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2024/11/norte-de-mexico.jpg?fit=1500%2C844&ssl=1');"></div>
+                    <div class="region-info">
+                        <h3>🤠 El Norte</h3>
+                        <p>Tierra de ganadería. Famosa por sus cortes de carne asada, tortillas de harina gigantes, cabrito y machaca.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-region">
+                    <div class="region-img" style="background-image: url('https://www.cultura.gob.mx/turismocultural/destino_mes/cd_mexico/imgs/vista_centro.jpg');"></div>
+                    <div class="region-info">
+                        <h3>🏙️ El Centro</h3>
+                        <p>El corazón de los antojitos. Sopes, tlacoyos, quesadillas, barbacoa y el indiscutible y milenario pozole.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-region">
+                    <div class="region-img" style="background-image: url('https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2022/10/ciudades-sur-mexico-tuxtla-shutter.jpg?resize=600%2C449&ssl=1');"></div>
+                    <div class="region-info">
+                        <h3>🌿 El Sur</h3>
+                        <p>Sabores ancestrales e indígenas. Dominan los moles complejos, la cochinita pibil, las tlayudas y el cacao.</p>
+                    </div>
+                </article>
+                <article class="tarjeta-region">
+                    <div class="region-img" style="background-image: url('https://media.foodandtravel.mx/wp-content/uploads/2024/05/Lexus_San_Pancho.jpg');"></div>
+                    <div class="region-info">
+                        <h3>🌊 Las Costas</h3>
+                        <p>Frescura total del océano. Ceviches, aguachiles picantes, pescados a la talla y cocteles de mariscos.</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Mapa Real de México incrustado -->
+            <div class="mapa-contenedor">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15053424.314275146!2d-105.01170716492984!3d23.62635956041699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84043a3b88685353%3A0xed64b4be6b099811!2sM%C3%A9xico!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa interactivo de México"></iframe>
             </div>
         </section>
 
+        <!-- ========================================== -->
+        <!-- VISTA 5: CONTACTO -->
+        <!-- ========================================== -->
         <section id="contacto" role="tabpanel" aria-labelledby="tab-contacto" tabindex="0" class="vista-oculta" hidden>
-            <div class="introduccion-box">
+            <div class="introduccion-box" style="max-width: 800px; margin: 0 auto;">
                 <h2 class="titulo-seccion">Contáctanos</h2>
-                <p class="texto-principal">Sección en construcción. Aquí habrá un formulario para compartir tus recetas
-                    familiares con nosotros.</p>
+                <div class="separador" aria-hidden="true"></div>
+                <p class="texto-principal" style="text-align: center; margin-bottom: 30px;">
+                    ¿Tienes una receta familiar que te gustaría compartir? ¡Nos encantaría conocerla!
+                </p>
+                <form id="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="nombre-input">Tu Nombre:</label>
+                        <input type="text" id="nombre-input" name="nombre" placeholder="Ej: Maria López" required minlength="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="receta-input">Tu Receta:</label>
+                        <textarea id="receta-input" name="receta" rows="6" placeholder="Cuéntanos los secretos de tu sazón..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">Compartir mi Receta</button>
+                </form>
+                <div id="form-feedback" role="alert"></div>
             </div>
         </section>
-
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const tabs = document.querySelectorAll('.nav-btn');
-            const paneles = document.querySelectorAll('[role="tabpanel"]');
+    <!-- ========================================== -->
+    <!-- MODAL DE RECETA -->
+    <!-- ========================================== -->
+    <dialog id="modal-receta" class="modal-dialog">
+        <div class="modal-content">
+            <button class="btn-cerrar-modal" id="cerrar-modal" aria-label="Cerrar receta">&times;</button>
+            <div class="modal-header">
+                <h2 id="modal-titulo">Título de la Receta</h2>
+                <span id="modal-badge" class="badge"></span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="Imagen de la receta">
+                </div>
+                <div class="modal-text">
+                    <h3>Ingredientes:</h3>
+                    <ul id="modal-ingredientes">
+                        <!-- Se llena con JS -->
+                    </ul>
+                    <h3>Preparación:</h3>
+                    <p id="modal-preparacion">
+                        <!-- Se llena con JS -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </dialog>
 
-            tabs.forEach(tab => {
-                tab.addEventListener("click", function (e) {
-                    // 1. Quitar activo y aria-selected a todos
-                    tabs.forEach(t => {
-                        t.classList.remove("activo");
-                        t.setAttribute("aria-selected", "false");
-                    });
-
-                    // 2. Ocultar todos los paneles
-                    paneles.forEach(panel => {
-                        panel.classList.remove("vista-activa");
-                        panel.classList.add("vista-oculta");
-                        panel.setAttribute("hidden", "true");
-                    });
-
-                    // 3. Activar el tab presionado
-                    this.classList.add("activo");
-                    this.setAttribute("aria-selected", "true");
-
-                    // 4. Mostrar el panel correspondiente
-                    const idDestino = this.getAttribute("aria-controls");
-                    const seccionDestino = document.getElementById(idDestino);
-                    seccionDestino.classList.remove("vista-oculta");
-                    seccionDestino.classList.add("vista-activa");
-                    seccionDestino.removeAttribute("hidden");
-
-                    // IMPORTANTE WCAG: Mover el foco al nuevo contenedor para lectores de pantalla
-                    seccionDestino.focus();
-                });
-            });
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
